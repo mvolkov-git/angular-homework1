@@ -1,3 +1,9 @@
 h1{
   color: red;
 }
+
+button {
+  color: blueviolet;
+  font-size: 20px;
+  font-weight: 800;
+}
