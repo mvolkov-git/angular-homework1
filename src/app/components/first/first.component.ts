@@ -27,7 +27,7 @@ export class FirstComponent {
     this.myArr = [8, 2, 5, 1];
     var randNumber = Math.trunc(Math.random() * 10)
     this.myArr.push(randNumber);
-    myArr.sort
+    //myArr.sort
     console.log(event);
   }
 }
