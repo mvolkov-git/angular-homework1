@@ -1,9 +1,9 @@
 <h1> Michael Volkov {{title}} </h1>
 <h1>Main component</h1>
-<button [disabled] = isButtonDisabled >My button</button>
-<input [value]="title">
+<button [disabled] = isButtonDisabled (click)="alertFunction('oj')">My button</button>
+<input [value]="title" (keypress)="title='changed from input'">
 
-<button (click)="title='I changed my title'">My other button</button>
+<button (click)="title='I changed my title'">Change title</button>
 
 <button (click)="click">My 3 button</button>
 
