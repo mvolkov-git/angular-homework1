@@ -1,14 +1,17 @@
 <div>
-<!-- <p>first title: {{title}}!</p> -->
-<h1>first works!</h1>
-<div>{{myArr}}</div>
+  <!-- <p>first title: {{title}}!</p> -->
+  <!-- <h1>first works!</h1> -->
+  <h1>{{myArr}}</h1>
 
-<!-- <button (click)="alertFunction('ojaf')">alert</button> -->
+  <!-- <button (click)="alertFunction('ojaf')">alert</button> -->
 
-<!-- <input [value]=0> -->
-<button (click)="AddNumberFunction(myArr[1])">add number</button>
+  <!-- <input [value]=0> -->
 
-<br>
-<br>
-<button [disabled]="true" (click)="onClick()">click me event</button>
+
+  <button (click)="AddNumberFunction(myArr[1])">add number</button>
+  <button (click)="SortArrayFunction(true)">Sort Ascend</button>
+  <button (click)="SortArrayFunction(false)">Sort Descend</button>
+  <br>
+  <!-- event -->
+  <!-- <button (click)="onClick()">click me event</button> -->
 </div>

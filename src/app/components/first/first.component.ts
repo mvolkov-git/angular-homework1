@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class FirstComponent {
   title = 'michael-first';
 
+  //const myArrConst: number[] = [8, 2, 5, 1];
+
   @Input()
   myArr: number[] = [8, 2, 5, 1];
 
@@ -27,7 +29,14 @@ export class FirstComponent {
     this.myArr = [8, 2, 5, 1];
     var randNumber = Math.trunc(Math.random() * 10)
     this.myArr.push(randNumber);
-    //myArr.sort
-    console.log(event);
+    // console.log(event);
+  }
+
+  SortArrayFunction(ascend: boolean ) {
+    this.myArr = [8, 2, 5, 1];
+    if (ascend)
+        this.myArr.sort((a,b)=>a - b);
+    else
+      this.myArr.sort((a,b)=>b - a);
   }
 }
