@@ -8,19 +8,24 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'My home work1';
   isButtonDisabled = true;
+  isButtonDisabled1 = true;
 
-  intArr: number[] = [];
+  gilsArray = [5, 6, 7, 8, 9];
 
   constructor() {
-    setTimeout(() => (this.isButtonDisabled = false), 5000);
+    setTimeout(() => (this.isButtonDisabled = false), 3000);
   }
 
-  click() {this.title = 'changed in class'}
+  click() {
+    this.title = 'changed in class';
+  }
 
-alertFunction(event: string) {
-  alert("Button clicked");
-  console.log(event);
-}
+  alertFunction(event: string) {
+    alert('Button clicked: ' + event);
+    console.log(event);
+  }
 
-  private mich() {}
+  myFunc() {
+    alert("boom " + Math.random());
+  }
 }

@@ -1,19 +1,38 @@
-<h1> Michael Volkov {{title}} </h1>
+
+<!-- <h1> Michael Volkov {{title}} </h1>
+
 <h1>Main component</h1>
-<button [disabled] = isButtonDisabled (click)="alertFunction('oj')">My button</button>
+<div>{{gilsArray}}</div>
+
+<button [disabled] = isButtonDisabled (click)="alertFunction('oj')">alert</button>
 <input [value]="title" (keypress)="title='changed from input'">
-
+<br>
 <button (click)="title='I changed my title'">Change title</button>
-
+<br>
 <button (click)="click">My 3 button</button>
 
-<!-- <p>
-  {{intArr}}
-</p> -->
+<br>
+<button [disabled]="!isButtonDisabled1" (click)="isButtonDisabled1 = !isButtonDisabled1">enabled</button>
+<button [disabled]="isButtonDisabled1" (click)="isButtonDisabled1 = !isButtonDisabled1">disabled</button>
+<input [value] = "gilsArray"> -->
 
-  <app-first></app-first>
-  <!-- <app-resume></app-resume> -->
+<div>
+  <app-first  (clicka)="myFunc()"></app-first>
+  <!-- <app-first [myArr]="gilsArray"
+  (clicka)="myFunc()"
+  ></app-first> -->
+  <!-- <app-first [myArr]="[11,12,13,14]"></app-first> -->
+</div>
+
+<app-second [title]="'gil title'" [anotherTitle]="'absdf_123'"></app-second>
+
+<!-- <app-second [title]="'gil title TWO'"
+  [anotherTitle] = "'hlab______&&'"
+></app-second> -->
+
+<br>
 
 
+<!-- <app-resume></app-resume> -->
 
-
+<app-arr-num></app-arr-num>

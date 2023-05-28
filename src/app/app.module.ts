@@ -6,6 +6,9 @@ import { FirstComponent } from './components/first/first.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ResumeDetailsComponent } from './components/resume-details/resume-details.component';
 import { ResumeTextComponent } from './components/resume-text/resume-text.component';
+import { ArrNumComponent } from './components/arr-num/arr-num.component';
+import { SecondComponent } from './components/second/second.component';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +16,9 @@ import { ResumeTextComponent } from './components/resume-text/resume-text.compon
     FirstComponent,
     ResumeComponent,
     ResumeDetailsComponent,
-    ResumeTextComponent
+    ResumeTextComponent,
+    ArrNumComponent,
+    SecondComponent,
 
   ],
   imports: [
