@@ -38,7 +38,5 @@ export class ArrNumComponent  implements OnInit{
 
   SortDefaultArrayFunction(){
     this.myArr = Object.assign([], this.myArrSaved);
-   // this.myArr.sort();
   }
-
 }

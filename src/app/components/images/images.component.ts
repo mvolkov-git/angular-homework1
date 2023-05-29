@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-images',
   templateUrl: './images.component.html',
@@ -8,27 +9,58 @@ import { Component, OnInit, Input } from '@angular/core';
 
 //const logo = require('../assets/logo.svg').default as string;
 export class ImagesComponent implements OnInit {
-  // private _images: Image[] = [];
+  isSlideshowRunning: boolean = false;
+  assetsRoot: string = "../../../assets/Images/";
+  num: number = 0;
+
+  imgNames: string[] = [
+    this.assetsRoot + "pexels-antony-trivet-14522299.jpg",
+    // this.assetsRoot + "pexels-arthouse-studio-4573430.jpg",
+    this.assetsRoot + "pexels-arthouse-studio-4573165.jpg",
+    this.assetsRoot + "pexels-erik-mclean-7833008.jpg",
+    this.assetsRoot + "pexels-lan-yao-15402560.jpg",
+    this.assetsRoot + "pexels-nilton-rodrigues-10294221.jpg",
+    this.assetsRoot + "pexels-q-hưng-phạm-14799215.jpg",
+  ];
 
   @Input()
-  src: string = '';
+  src: string = "../../../assets/Images/pexels-erik-mclean-7833008.jpg";
 
   @Input()
-  width: Number = 300;
+  width: Number = 200;
 
-  constructor() {
-    setTimeout(() => (this.src = '../../../assets/Images/pexels-nilton-rodrigues-10294221.jpg'), 3000);
-  }
+  @Input()
+  btnStartStopText: string = "Start slideshow";
 
   ngOnInit() {
-    // alert(this.src);
+    // for (let i = 0; i < this.imgNames.length; i++) {
+    //   setTimeout(
+    //     () => (this.src = '../../../assets/Images/' + this.imgNames[i]),
+    //     1000
+    //   );
 
-    // this._images = [
-    //   { title: 'Slide 1', url: '../photos/carousel/gg_slide 1.jpg' },
-    //   { title: 'Slide 2', url: '../photos/carousel/gg_slide 2.jpg' },
-    //   { title: 'Slide 3', url: '../photos/carousel/gg_slide 3.jpg' },
-    //   { title: 'Slide 4', url: '../photos/carousel/gg_slide 4.jpg' },
-    //   { title: 'Slide 5', url: '../photos/carousel/gg_slide 5.jpg' },
-    // ];
+    //}
+    //   // console.log(this.src);
+    // //  alert(this.src);
+    // }
+    //}
+  }
+
+  delay(ms: number){
+    return new Promise<void>(resolve=> setTimeout(resolve,ms));
+  }
+
+  async StartStopSlideshow() {
+    this.isSlideshowRunning = !this.isSlideshowRunning;
+    this.btnStartStopText =
+      (this.isSlideshowRunning ? 'Stop' : 'Start') + ' slideshow';
+
+    while (this.isSlideshowRunning) {
+      await this.delay(300);
+      this.num++;
+      if (this.num == this.imgNames.length)
+        this.num = 0;
+      await this.delay(2000);
+    }
   }
 }

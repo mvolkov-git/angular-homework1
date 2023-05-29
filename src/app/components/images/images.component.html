@@ -1,13 +1,21 @@
-<p>images works!</p>
+<!-- <p>images works!</p> -->
 
-<!-- <img width="300"[src]="'https://images.pexels.com/photos/13623437/pexels-photo-13623437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+<!-- <img width="300"[src]="'https://images.pexels.com/photos/13623437/pexels-photo-13623437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">-->
+<table>
+  <td style="vertical-align: top;">
 
-<img width="300" alt="Angular Logo" src="../../../assets/Images/pexels-nilton-rodrigues-10294221.jpg"> -->
-<img width={{width}} alt="Angular Logo" src={{src}}>
+      <button (click)='width=200'>Small picture</button><br><br>
+      <button (click)='width=400'>Big picture</button><br><br>
+      <button (click)='StartStopSlideshow()'>{{btnStartStopText}}</button>
+
+  </td>
+  <td>&nbsp;&nbsp;</td>
+  <td>
+    <img width={{width}}  alt="Angular Logo" [src]="imgNames[num]">
+  </td>
+</table>
+<!-- <img width={{width}}  alt="Angular Logo" [src]="imgNames[num]">
 <br>
-<br>
-<button (click)='width = 300'>Small picture</button>
-<button (click)='width = 600'>Big picture</button>
-
-
-
+<button (click)='width=200'>Small picture</button>&nbsp;
+<button (click)='width=300'>Big picture</button>&nbsp;
+<button (click)='StartStopSlideshow()'>{{btnStartStopText}}</button>&nbsp; -->
