@@ -1,4 +1,10 @@
-<p>arr-num works!</p>
+<!-- <p>arr-num works!</p> -->
 
 <h1>{{title}}</h1>
-<div>{{myArr}}</div>
+
+<h1>{{myArr}}</h1>
+
+<button (click)="AddNumberFunction(myArr[1])">Add Element</button>
+<button (click)="SortArrayFunction(true)">Sort Ascend</button>
+<button (click)="SortArrayFunction(false)">Sort Descend</button>
+<br>

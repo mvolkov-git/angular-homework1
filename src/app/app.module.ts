@@ -8,6 +8,7 @@ import { ResumeDetailsComponent } from './components/resume-details/resume-detai
 import { ResumeTextComponent } from './components/resume-text/resume-text.component';
 import { ArrNumComponent } from './components/arr-num/arr-num.component';
 import { SecondComponent } from './components/second/second.component';
+import { ImagesComponent } from './components/images/images.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SecondComponent } from './components/second/second.component';
     ResumeTextComponent,
     ArrNumComponent,
     SecondComponent,
+    ImagesComponent,
 
   ],
   imports: [

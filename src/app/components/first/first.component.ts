@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+
 @Component({
   selector: 'app-first',
   templateUrl: './first.component.html',
@@ -8,10 +9,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class FirstComponent {
   title = 'michael-first';
 
-  //const myArrConst: number[] = [8, 2, 5, 1];
-
   @Input()
-  myArr: number[] = [8, 2, 5, 1];
+  myArr: number[] = [];
 
   @Output()
   clicka = new EventEmitter<string>();
@@ -25,18 +24,4 @@ export class FirstComponent {
     console.log(event);
   }
 
-  AddNumberFunction(event: number) {
-    this.myArr = [8, 2, 5, 1];
-    var randNumber = Math.trunc(Math.random() * 10)
-    this.myArr.push(randNumber);
-    // console.log(event);
-  }
-
-  SortArrayFunction(ascend: boolean ) {
-    this.myArr = [8, 2, 5, 1];
-    if (ascend)
-        this.myArr.sort((a,b)=>a - b);
-    else
-      this.myArr.sort((a,b)=>b - a);
-  }
 }

@@ -1,4 +1,3 @@
-
 <!-- <h1> Michael Volkov {{title}} </h1>
 
 <h1>Main component</h1>
@@ -17,22 +16,29 @@
 <input [value] = "gilsArray"> -->
 
 <div>
-  <app-first  (clicka)="myFunc()"></app-first>
-  <!-- <app-first [myArr]="gilsArray"
-  (clicka)="myFunc()"
-  ></app-first> -->
+  <!-- <app-first  (clicka)="myFunc()"></app-first> -->
+
+  <app-first (clicka)="myFunc()"></app-first>
+
   <!-- <app-first [myArr]="[11,12,13,14]"></app-first> -->
 </div>
 
-<app-second [title]="'gil title'" [anotherTitle]="'absdf_123'"></app-second>
+<!-- <app-second [title]="'gil title'" [anotherTitle]="'absdf_123'"></app-second> -->
 
 <!-- <app-second [title]="'gil title TWO'"
   [anotherTitle] = "'hlab______&&'"
 ></app-second> -->
 
 <br>
+<img width="300" alt="Angular Logo" src="../../../assets/Images/pexels-antony-trivet-14522299.jpg">
+<div>
+  <app-images [src]="'../../../assets/Images/pexels-antony-trivet-14522299.jpg'"></app-images>
+</div>
 
-
-<!-- <app-resume></app-resume> -->
-
-<app-arr-num></app-arr-num>
+<div>
+  <app-resume></app-resume>
+</div>
+<br>
+<div>
+  <app-arr-num></app-arr-num>
+</div>
