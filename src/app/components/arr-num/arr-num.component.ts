@@ -1,6 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
 
-const  myArrConst: number[] = [8, 2, 5, 1];
+const  myArrConst: number[] = [10, 20, 30];
 
 @Component({
   selector: 'app-arr-num',
@@ -9,28 +9,36 @@ const  myArrConst: number[] = [8, 2, 5, 1];
 })
 export class ArrNumComponent  implements OnInit{
   title = "Array manage";
-  myArrSave: number[] = [];
+  myArrSaved: number[] = [];
 
   @Input()
-  myArr: number[] = [8, 2, 5, 1];
+  myArr: number[] = [];
 
   ngOnInit()
   {
-    this.myArrSave = this.myArr;
+    this.myArr = Object.assign([], myArrConst);
+    this.myArrSaved = Object.assign([], this.myArr);
   }
 
   AddNumberFunction(event: number) {
-    this.myArr = this.myArrSave;
-    var randNumber = Math.trunc(Math.random() * 10)
+   this.myArr = Object.assign([], this.myArrSaved);
+    var randNumber = Math.trunc(Math.random() * 100)
     this.myArr.push(randNumber);
+    this.myArrSaved = Object.assign([], this.myArr);
     // console.log(event);
   }
 
   SortArrayFunction(ascend: boolean ) {
-    this.myArr = [8, 2, 5, 1];
+   this.myArr = Object.assign([], this.myArrSaved);
     if (ascend)
         this.myArr.sort((a,b)=>a - b);
     else
-      this.myArr.sort((a,b)=>b - a);
+       this.myArr.sort((a,b)=>b - a);
   }
+
+  SortDefaultArrayFunction(){
+    this.myArr = Object.assign([], this.myArrSaved);
+   // this.myArr.sort();
+  }
+
 }
