@@ -1,20 +1,28 @@
 <!-- <p>images works!</p> -->
 
 <!-- <img width="300"[src]="'https://images.pexels.com/photos/13623437/pexels-photo-13623437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">-->
-<table>
+<table width="500">
   <td style="vertical-align: top;">
 
       <button (click)='width=200'>Small picture</button><br><br>
       <button (click)='width=400'>Big picture</button><br><br>
-      <button (click)='StartStopSlideshow()'>{{btnStartStopText}}</button>
+      <button [ngStyle]="{'color': btnColor}" (click)='StartStopSlideshow()'>{{btnStartStopText}}</button>
 
   </td>
   <td>&nbsp;&nbsp;</td>
   <td>
-    <img width={{width}}  alt="Angular Logo" [src]="imgNames[num]">
+    <img width={{width}}  alt="Angular Logo" [src]="imgSources[num]">
   </td>
 </table>
-<!-- <img width={{width}}  alt="Angular Logo" [src]="imgNames[num]">
+<table>
+  <ng-container *ngFor="let imgSrc of imgSources; let idx = index">
+    <td [width]="90">
+      <img width="80" [src]=imgSrc (click)='setSource(idx)'>
+    </td>
+  </ng-container>
+
+</table>
+<!-- <img width={{width}}  alt="Angular Logo" [src]="imgSources[num]">
 <br>
 <button (click)='width=200'>Small picture</button>&nbsp;
 <button (click)='width=300'>Big picture</button>&nbsp;

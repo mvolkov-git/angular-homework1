@@ -16,12 +16,14 @@ export class ArrNumComponent  implements OnInit{
 
   ngOnInit()
   {
-    this.myArr = Object.assign([], myArrConst);
+    // this.myArr = Object.assign([], myArrConst);
+    this.myArr = [... myArrConst];
     this.myArrSaved = Object.assign([], this.myArr);
   }
 
   AddNumberFunction(event: number) {
-   this.myArr = Object.assign([], this.myArrSaved);
+  //  this.myArr = Object.assign([], this.myArrSaved);
+   this.myArr = [... this.myArrSaved];
     var randNumber = Math.trunc(Math.random() * 100)
     this.myArr.push(randNumber);
     this.myArrSaved = Object.assign([], this.myArr);
@@ -29,7 +31,8 @@ export class ArrNumComponent  implements OnInit{
   }
 
   SortArrayFunction(ascend: boolean ) {
-   this.myArr = Object.assign([], this.myArrSaved);
+  //  this.myArr = Object.assign([], this.myArrSaved);
+  this.myArr = [... this.myArrSaved];
     if (ascend)
         this.myArr.sort((a,b)=>a - b);
     else

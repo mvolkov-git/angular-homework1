@@ -4,6 +4,9 @@ button {
   font-size: 14px;
 }
 
+orange {
+  color: orange;
+}
 /* .crop {
   height: 600px;
   overflow: hidden;
